@@ -8,8 +8,10 @@
 
 #arg1= file name
 #arg2= procyon installed? Flags: 'n'
+
 echo File Name: $1
 a=${1:: -4}
+
 echo Outputting as: $a
 if [$2 = '']; then
 	echo You already have procyon eh?
