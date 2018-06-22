@@ -1,4 +1,5 @@
 #!/bin/bash
+#JYC
 #Mini script to run some commands to decomiple APKs.
 #Should run natively on kali besides needing to
 #install procyon
