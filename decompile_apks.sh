@@ -8,8 +8,11 @@
 #arg1= file name
 #arg2= procyon installed? Flags: 'n'
 echo File Name: $1
-
-if [$2 = 'n']; then
+a=${1:: -4}
+echo Outputting as: $a
+if [$2 = '']; then
+	echo You already have procyon eh?
+elif [$2 = 'n']; then
 	sudo apt-get install procyon-decompiler
 fi
 
@@ -17,13 +20,13 @@ if [$1 = '']; then
 	echo You didn\'t give me a file idiot
 else
 	echo *************USING APKTOOL*************
-	apktool d $1.apk
+	apktool d $1
 	echo ***************UNZIPPING***************
-	unzip -p $1.apk classes.dex > $1/classes.dex
-	cd $1
+	unzip -p $1 classes.dex > $1/classes.dex
+	cd $a
 	echo ***************JAR-ING*****************
 	d2j-dex2jar classes.dex
 	echo ***************JAR2SRC*****************
 	procyon -o src -ss classes-dex2jar.jar
-	echo Done decompiling $1
+	echo Done decompiling $a
 fi
