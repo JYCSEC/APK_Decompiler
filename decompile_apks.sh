@@ -1,6 +1,6 @@
 #!/bin/bash
 #Mini script to run some commands to decomiple APKs.
-#Should run natively onl kali besides needing to
+#Should run natively on kali besides needing to
 #install procyon
 
 #Dependecies: apktool, dex2jar, procyon
