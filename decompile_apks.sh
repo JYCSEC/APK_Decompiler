@@ -25,7 +25,7 @@ else
 	echo *************USING APKTOOL*************
 	apktool d $1
 	echo ***************UNZIPPING***************
-	unzip -p $1 classes.dex > $1/classes.dex
+	unzip -p $1 classes.dex > $a/classes.dex
 	cd $a
 	echo ***************JAR-ING*****************
 	d2j-dex2jar classes.dex
